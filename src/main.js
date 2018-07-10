@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import './assets/stylesheets/application.scss'
+import common from './components/common'
+Vue.use(common)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

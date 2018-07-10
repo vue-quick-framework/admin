@@ -60,7 +60,19 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    scss: generateLoaders('sass').concat({
+      loader: "@epegzz/sass-vars-loader", options: {
+        syntax: 'scss',
+        files: [
+          // Option 3) Load vars from JavaScript file
+          path.resolve(__dirname, '../src/assets/javascripts/scss_vars/index.js')
+        ]}
+    }).concat({
+      loader: 'sass-resources-loader',
+      options: {
+        resources: path.resolve(__dirname, '../src/assets/stylesheets/mixins/_vars.scss')
+      }
+    }),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }
