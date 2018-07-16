@@ -1,7 +1,7 @@
 *, *:before, *:after { box-sizing: inherit; outline: none; }
 * { margin: 0; padding: 0; }
 html { box-sizing: border-box; background: map_get($theme, bg-page) }
-html, body { height: 100%; overflow: auto; }
+html, body { height: 100%; }
 body { font-size: 12px; -webkit-font-smoothing: antialiased; font-family: arial, sans-serif; }
 
 ol, ul { list-style: none; }
