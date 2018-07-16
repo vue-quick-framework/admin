@@ -1,6 +1,6 @@
 <template>
   <div class="clearfix" style="height: 100%">
-    <slider-bar class="left-nav fl"></slider-bar>
+    <sider-bar class="left-nav fl"></sider-bar>
     <div class="right-body">
       <nav-bar></nav-bar>
       <main-body></main-body>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import SliderBar from './SliderBar.vue'
+import SiderBar from './SiderBar.vue'
 import NavBar from './NavBar.vue'
 import MainBody from './MainBody.vue'
 export default {
   components: {
-    SliderBar,
+    SiderBar,
     NavBar,
     MainBody
   }
@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
   .left-nav {
-    width: 201px;
+    /*width: 201px;*/
     height: 100%;
   }
   .right-body {

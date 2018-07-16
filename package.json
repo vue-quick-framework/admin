@@ -14,7 +14,8 @@
     "element-ui": "^2.4.3",
     "vue": "^2.5.2",
     "vue-ext": "0.0.8",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@epegzz/sass-vars-loader": "^3.4.0",
