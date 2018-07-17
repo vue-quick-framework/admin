@@ -1,5 +1,5 @@
 <template>
-  <el-menu class="navbar" mode="horizontal">
+  <el-menu class="navbar clearfix" mode="horizontal">
     <hamburger class="fl"></hamburger>
     <el-breadcrumb separator="/" class="breadcrumb fl">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -7,14 +7,34 @@
       <el-breadcrumb-item>活动列表</el-breadcrumb-item>
       <el-breadcrumb-item>活动详情</el-breadcrumb-item>
     </el-breadcrumb>
+    <!--右侧-->
+    <div class="right-menu fr">
+      <el-dropdown class="avatar-container right-menu-item" trigger="click">
+        <div class="avatar-wrapper">
+          <span>Hello</span>
+          <i class="el-icon-caret-bottom"></i>
+        </div>
+        <el-dropdown-menu slot="dropdown">
+          <router-link to="/">
+            <el-dropdown-item>
+              dashboard
+            </el-dropdown-item>
+          </router-link>
+          <el-dropdown-item divided>
+            <span @click="logout" style="display: block;">logOut</span>
+          </el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
   </el-menu>
 </template>
 
 <script>
-import Hamburger from '@/components/share/single/Hamburger'
 export default {
-  components: {
-    Hamburger
+  methods: {
+    logout () {
+      console.log('logout')
+    }
   }
 }
 </script>
@@ -27,6 +47,10 @@ export default {
 
     .breadcrumb {
       padding-left: 10px;
+      line-height: 28px;
+    }
+
+    .right-menu {
       line-height: 28px;
     }
   }
