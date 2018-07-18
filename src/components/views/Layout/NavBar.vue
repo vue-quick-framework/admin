@@ -35,8 +35,22 @@
 export default {
   methods: {
     logout () {
-      console.log('logout')
+      this.$auth.logout({
+        makeRequest: true,
+        success () {
+          console.log('success logout')
+        },
+        error () {
+          console.log('error logout')
+        }
+      })
     }
+  },
+  created () {
+    console.log(this.$auth)
+    //    this.$auth.login({data: {email: '1@mg.com', password: '123123123'}, rememberMe: true}).then(({data}) => {
+    //      console.log('1', data)
+    //    })
   }
 }
 </script>
