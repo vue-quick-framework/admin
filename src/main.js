@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import api from './utils/api'
 
 import './assets/stylesheets/application.scss'
 import common from './components/common'
 Vue.use(common)
+Vue.use(api)
 
 Vue.config.productionTip = false
 

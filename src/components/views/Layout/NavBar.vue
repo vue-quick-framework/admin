@@ -1,12 +1,14 @@
 <template>
   <el-menu class="navbar clearfix" mode="horizontal">
     <hamburger class="fl"></hamburger>
-    <el-breadcrumb separator="/" class="breadcrumb fl">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-      <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-      <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-    </el-breadcrumb>
+    <div class="content">
+      <el-breadcrumb separator="/" class="breadcrumb fl">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
+        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
+        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <!--右侧-->
     <div class="right-menu fr">
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
@@ -44,10 +46,16 @@ export default {
     height: 51px;
     padding: 10px;
     line-height: 20px;
+    overflow: hidden;
 
-    .breadcrumb {
-      padding-left: 10px;
-      line-height: 28px;
+    .content {
+      .breadcrumb {
+        padding-left: 10px;
+        line-height: 28px;
+      }
+      @include mobile-device {
+        display: none;
+      }
     }
 
     .right-menu {

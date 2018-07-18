@@ -6,7 +6,7 @@ import Layout from '@/components/views/Layout/Index'
 
 Vue.use(Router)
 
-export default new Router({
+Vue.router = new Router({
     routes: [{ path: '', component: Layout, redirect: 'dashboard', children: [{
       path: 'dashboard', name: 'Dashboard', meta: { title: 'dashboard', icon: 'dashboard', noCache: true }, component: (resolve) => { require(['@/pages/dashboard/Index'], resolve) },
     }, {
@@ -14,3 +14,4 @@ export default new Router({
     }]
   }]
 })
+export default Vue.router

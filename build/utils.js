@@ -70,7 +70,14 @@ exports.cssLoaders = function (options) {
     }).concat({
       loader: 'sass-resources-loader',
       options: {
-        resources: path.resolve(__dirname, '../src/assets/stylesheets/mixins/_vars.scss')
+        resources: [
+          // path.resolve(__dirname, '../src/assets/stylesheets/mixins/_vars.scss'),
+          // path.resolve(__dirname, '../src/assets/stylesheets/mixins/_devices.scss'),
+          // path.resolve(__dirname, '../src/assets/stylesheets/mixins/_screens.scss'),
+          // path.resolve(__dirname, '../src/assets/stylesheets/mixins/_classes.scss'),
+          // path.resolve(__dirname, '../src/assets/stylesheets/mixins/_animations.scss'),
+          path.resolve(__dirname, '../src/assets/stylesheets/mixins/*.scss')
+        ]
       }
     }),
     stylus: generateLoaders('stylus'),
