@@ -40,7 +40,7 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$auth.login({data: this.form}).then(({data}) => {
+          this.$auth.login({data: this.form, rememberMe: false}).then(({data}) => {
             console.log('1', data)
           })
         }
